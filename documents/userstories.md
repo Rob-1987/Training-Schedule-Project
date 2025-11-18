@@ -22,7 +22,7 @@ Tasks
 
 
 
-USER STORIES
+User Stories:
 
 
 As Rachel, I want to be able to choose a fitness technique, so that she can exercise in the comfort of her home.
