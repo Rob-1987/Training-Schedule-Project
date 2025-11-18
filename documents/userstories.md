@@ -25,7 +25,7 @@ Tasks
 USER STORIES
 
 
-As Rachel, I want to be able to choose a fitness technique, so that she can exercise in the comfort of her home.
+As Rachel, I want to be able to choose a fitness technique, so that i can exercise in the comfort of her home.
 
 
 As Rachel, I want to be able to do chest, back, legs, arms and 2 days of cardio with one day rest each week, so that I know my schedule and can plan my week and make sure I don’t over train muscle groups.
