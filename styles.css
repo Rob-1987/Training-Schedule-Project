@@ -1,0 +1,22 @@
+.card-container {
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+.blue-card {
+    background-color: #0ed7f1;
+}
+
+.yellow-card {
+    background-color: #fae741;
+}
+.container-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
