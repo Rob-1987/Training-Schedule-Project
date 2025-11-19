@@ -1,0 +1,2 @@
+This is my very first project where ill be building a fitness app that allows users to select their fitness level, input their name for a personalized experience, and view daily exercise schedules. The app will also provide workout plans based on different fitness techniques, allowing users to plan their week effectively.
+The main features of the app will include:workout plans based on different fitness techniques, allowing users to plan their week effectively.
