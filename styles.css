@@ -48,3 +48,14 @@
     border: none;
     color: black;
 }
+/* Styling for weekdays buttons - Body weight and Weight training */
+.weekdays-colour {
+    background-color: #0ed7f1;
+    border: none;
+    color: white;
+}
+.weekdays-colour-weight {
+    background-color: #f4d03f;
+    border: none;   
+    color: black;
+}
