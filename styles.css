@@ -59,3 +59,25 @@
     border: none;   
     color: black;
 }
+/* Styling for Complete week buttons - Body weight and Weight training */
+.complete-week-colour {
+    background-color: #1df750;
+    border: none;
+    color: white;
+}
+.complete-week-weight-colour {
+    background-color: #1df750;
+    border: none;
+    color: white;
+}
+/* Styling for Reset schedule buttons - Body weight and Weight training */
+.reset-schedule-colour {
+    background-color: #f54242;
+    border: none;
+    color: white;
+}
+.reset-schedule-weight-colour {
+    background-color: #f54242;
+    border: none;
+    color: white;
+}
