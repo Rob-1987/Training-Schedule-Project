@@ -6,6 +6,7 @@
     flex-direction: column;
     margin: 0 auto;
 }
+
 /* Styling for the cards with complete week buttons and reset buttons */
 .card-container {
     border: 1px solid #ccc;
@@ -14,6 +15,7 @@
     margin-top: 20px;
     background-color: #f9f9f9;
 }
+
 .blue-card {
     background-color: #0ed7f1;
 }
@@ -23,10 +25,8 @@
 }
 
 /* Styling for Body weight level buttons  */
-.beginner-button-colour {
-    background-color: #0ed7f1;
+.main-button {
     border: none;
-    color: white;
     padding: 10px 24px;
     text-align: center;
     text-decoration: none;
@@ -36,102 +36,45 @@
     cursor: pointer;
     border-radius: 12px;
 }
-
-.intermediate-button-colour {
+.beginner {
     background-color: #0ed7f1;
     border: none;
     color: white;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
 }
-
-.hard-button-colour {
+.intermediate {
     background-color: #0ed7f1;
     border: none;
     color: white;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
 }
-
-.advanced-button-colour {
+.hard {
     background-color: #0ed7f1;
     border: none;
     color: white;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
+}
+.advanced {
+    background-color: #0ed7f1;
+    border: none;
+    color: white;
 }
 
 /* Styling for Weight training level buttons  */
-.beginner-button-colour-weight {
+.beginner-weight {
     background-color: #fae741;
     border: none;
     color: black;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
 }
-
-.intermediate-button-colour-weight {
+.intermediate-weight {
     background-color: #fae741;
     border: none;
     color: black;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
 }
-
-.hard-button-colour-weight {
+.hard-weight {
     background-color: #fae741;
     border: none;
     color: black;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
 }
-
-.advanced-button-colour-weight {
+.advanced-weight {
     background-color: #fae741;
     border: none;
     color: black;
-    padding: 10px 24px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
 }
