@@ -1,7 +1,15 @@
+/* Styling for the main container */
+.container-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+}
+/* Styling for the cards with complete week buttons and reset buttons */
 .card-container {
-
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 50px;
     padding: 15px;
     margin-top: 20px;
     background-color: #f9f9f9;
@@ -13,18 +21,10 @@
 .yellow-card {
     background-color: #fae741;
 }
-.container-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0 auto;
-}
-
 
 /* Styling for Body weight level buttons  */
 .beginner-button-colour {
-    background-color:#0ed7f1;
+    background-color: #0ed7f1;
     border: none;
     color: white;
     padding: 10px 24px;
@@ -36,8 +36,9 @@
     cursor: pointer;
     border-radius: 12px;
 }
+
 .intermediate-button-colour {
-    background-color:#0ed7f1;
+    background-color: #0ed7f1;
     border: none;
     color: white;
     padding: 10px 24px;
@@ -49,8 +50,9 @@
     cursor: pointer;
     border-radius: 12px;
 }
+
 .hard-button-colour {
-    background-color:#0ed7f1;
+    background-color: #0ed7f1;
     border: none;
     color: white;
     padding: 10px 24px;
@@ -62,8 +64,9 @@
     cursor: pointer;
     border-radius: 12px;
 }
+
 .advanced-button-colour {
-    background-color:#0ed7f1;
+    background-color: #0ed7f1;
     border: none;
     color: white;
     padding: 10px 24px;
@@ -74,10 +77,11 @@
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 12px;
-} 
+}
+
 /* Styling for Weight training level buttons  */
 .beginner-button-colour-weight {
-    background-color:#fae741;
+    background-color: #fae741;
     border: none;
     color: black;
     padding: 10px 24px;
@@ -89,8 +93,9 @@
     cursor: pointer;
     border-radius: 12px;
 }
+
 .intermediate-button-colour-weight {
-    background-color:#fae741;
+    background-color: #fae741;
     border: none;
     color: black;
     padding: 10px 24px;
@@ -102,8 +107,9 @@
     cursor: pointer;
     border-radius: 12px;
 }
+
 .hard-button-colour-weight {
-    background-color:#fae741;
+    background-color: #fae741;
     border: none;
     color: black;
     padding: 10px 24px;
@@ -115,8 +121,9 @@
     cursor: pointer;
     border-radius: 12px;
 }
+
 .advanced-button-colour-weight {
-    background-color:#fae741;
+    background-color: #fae741;
     border: none;
     color: black;
     padding: 10px 24px;
