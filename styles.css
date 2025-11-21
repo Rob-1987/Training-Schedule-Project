@@ -36,44 +36,14 @@
     cursor: pointer;
     border-radius: 12px;
 }
-.beginner {
-    background-color: #0ed7f1;
-    border: none;
-    color: white;
-}
-.intermediate {
-    background-color: #0ed7f1;
-    border: none;
-    color: white;
-}
-.hard {
-    background-color: #0ed7f1;
-    border: none;
-    color: white;
-}
-.advanced {
+.level-colour {
     background-color: #0ed7f1;
     border: none;
     color: white;
 }
 
 /* Styling for Weight training level buttons  */
-.beginner-weight {
-    background-color: #fae741;
-    border: none;
-    color: black;
-}
-.intermediate-weight {
-    background-color: #fae741;
-    border: none;
-    color: black;
-}
-.hard-weight {
-    background-color: #fae741;
-    border: none;
-    color: black;
-}
-.advanced-weight {
+.level-colour-weight {
     background-color: #fae741;
     border: none;
     color: black;
