@@ -19,10 +19,15 @@
 
 .blue-card {
     background-color: #0ed7f1;
+    border: rgb(6, 118, 246) 2px solid;
+    box-shadow: 0 8px 16px rgba(0, 0, 0.4, 0.4)    ;
+
 }
 
 .yellow-card {
     background-color: #fae741;
+    border: rgb(110, 94, 2) 2px solid;
+    box-shadow: 0 8px 16px rgba(0, 0, 0.4, 0.4);
 }
 
 /* Styling for Body weight level buttons  */
