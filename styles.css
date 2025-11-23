@@ -44,25 +44,28 @@
 }
 .level-colour {
     background-color: #0ed7f1;
-    border: none;
-    color: white;
+    border: rgb(6, 118, 246) 2px solid;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    color: black;
 }
 
 /* Styling for Weight training level buttons  */
 .level-colour-weight {
     background-color: #fae741;
-    border: none;
+    border: rgb(110, 94, 2) 2px solid;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     color: black;
 }
 /* Styling for weekdays buttons - Body weight and Weight training */
 .weekdays-colour {
     background-color: #0ed7f1;
-    border: none;
-    color: white;
+    border: rgb(6, 118, 246) 2px solid;
+    color: black;
 }
 .weekdays-colour-weight {
-    background-color: #f4d03f;
-    border: none;   
+   background-color: #fae741;
+    border: rgb(110, 94, 2) 2px solid;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     color: black;
 }
 /* Styling for Complete week buttons - Body weight and Weight training */
