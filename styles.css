@@ -82,3 +82,9 @@
     border: none;
     color: white;
 }
+.placement-level-buttons {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
