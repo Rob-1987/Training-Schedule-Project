@@ -14,7 +14,7 @@
     text-align: center;
     font-size: 18px;
     margin-bottom: 8px;
-    color: darkblue;
+    color:rgb(6, 118, 246);
 }
 
 
@@ -25,12 +25,6 @@
     border: 2px solid #3498db;
     border-radius: 6px;
 }
-
-
-
-
-
-
 
 
 /* Styling for the cards with complete week buttons and reset buttons */
@@ -88,6 +82,7 @@
 .weekdays-colour {
     background-color: #0ed7f1;
     border: rgb(6, 118, 246) 2px solid;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     color: black;
 }
 
@@ -130,4 +125,19 @@
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
+}
+/* Styling for the schedule headings */
+.schedule-headings {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 0 10px 0;
+    font-weight: bold;
+}
+
+.bodyweight-heading {
+    color:  rgb(6, 118, 246);
+}
+
+.weight-heading {
+    color: rgb(245, 213, 33)
 }
