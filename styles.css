@@ -7,6 +7,32 @@
     margin: 0 auto;
 }
 
+/* Styling for the user name label */
+.name-label {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: darkblue;
+}
+
+
+
+/* Styling for the user name input form */
+.name-input-container input[type="text"] {
+    padding: 10px 12px;
+    border: 2px solid #3498db;
+    border-radius: 6px;
+}
+
+
+
+
+
+
+
+
 /* Styling for the cards with complete week buttons and reset buttons */
 .card-container {
     justify-content: center;
@@ -20,7 +46,7 @@
 .blue-card {
     background-color: #0ed7f1;
     border: rgb(6, 118, 246) 2px solid;
-    box-shadow: 0 8px 16px rgba(0, 0, 0.4, 0.4)    ;
+    box-shadow: 0 8px 16px rgba(0, 0, 0.4, 0.4);
 
 }
 
@@ -42,6 +68,7 @@
     cursor: pointer;
     border-radius: 12px;
 }
+
 .level-colour {
     background-color: #0ed7f1;
     border: rgb(6, 118, 246) 2px solid;
@@ -56,24 +83,28 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     color: black;
 }
+
 /* Styling for weekdays buttons - Body weight and Weight training */
 .weekdays-colour {
     background-color: #0ed7f1;
     border: rgb(6, 118, 246) 2px solid;
     color: black;
 }
+
 .weekdays-colour-weight {
-   background-color: #fae741;
+    background-color: #fae741;
     border: rgb(110, 94, 2) 2px solid;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     color: black;
 }
+
 /* Styling for Complete week buttons - Body weight and Weight training */
 .complete-week-colour {
     background-color: #1df750;
     border: none;
     color: white;
 }
+
 .complete-week-weight-colour {
     background-color: #1df750;
     border: none;
@@ -86,6 +117,7 @@
     border: none;
     color: white;
 }
+
 .reset-schedule-weight-colour {
     background-color: #f54242;
     border: none;
@@ -98,4 +130,4 @@
     flex-direction: column;
     gap: 10px;
     margin-top: 10px;
-}   
+}
