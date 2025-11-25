@@ -20,10 +20,10 @@
 
         <div class="name-input-container">
             <div class="name-label">
-            <label for="name">Enter your name:</label>
+                <label for="name">Enter your name:</label>
             </div>
             <input type="text" id="name" name="name">
-        
+
         </div>
 
 
@@ -63,15 +63,16 @@
 
         <!--Body Weight Buttons for each day of the week -->
         <div>
-            <button class="main-button weekdays-colour" type="button" id="monday-bodyweight-button">Monday</button>
-            <button class="main-button weekdays-colour" type="button" id="tuesday-bodyweight-button">Tuesday</button>
-            <button class="main-button weekdays-colour" type="button"
+            <button onclick="getBodyWeightBeginnerPlan('Monday', 'beginner')" class="main-button weekdays-colour" type="button" id="monday-bodyweight-button">Monday</button>
+            <button onclick="getBodyWeightBeginnerPlan('Tuesday', 'beginner')" class="main-button weekdays-colour" type="button" id="tuesday-bodyweight-button">Tuesday</button>
+            <button onclick="getBodyWeightBeginnerPlan('Wednesday', 'beginner')" class="main-button weekdays-colour" type="button"
                 id="wednesday-bodyweight-button">Wednesday</button>
-            <button class="main-button weekdays-colour" type="button" id="thursday-bodyweight-button">Thursday</button>
-            <button class="main-button weekdays-colour" type="button" id="friday-bodyweight-button">Friday</button>
-            <button class="main-button weekdays-colour" type="button" id="saturday-bodyweight-button">Saturday</button>
-            <button class="main-button weekdays-colour" type="button" id="sunday-bodyweight-button">Sunday
+            <button onclick="getBodyWeightBeginnerPlan('Thursday', 'beginner')" class="main-button weekdays-colour" type="button" id="thursday-bodyweight-button">Thursday</button>
+            <button onclick="getBodyWeightBeginnerPlan('Friday', 'beginner')" class="main-button weekdays-colour" type="button" id="friday-bodyweight-button">Friday</button>
+            <button onclick="getBodyWeightBeginnerPlan('Saturday', 'beginner')" class="main-button weekdays-colour" type="button" id="saturday-bodyweight-button">Saturday</button>
+            <button onclick="getBodyWeightBeginnerPlan('Sunday', 'beginner')" class="main-button weekdays-colour" type="button" id="sunday-bodyweight-button">Sunday
                 (rest)</button>
+                <div id="output"></div>
         </div>
         <div>
             <!-- Weight Training Heading -->
