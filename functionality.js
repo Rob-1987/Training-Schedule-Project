@@ -62,7 +62,7 @@ function getBodyWeightPlan(day, level) {
 // Function to get body weight workout plan based on day and level
 function getBodyWeightBeginnerPlan(day, level) {
     const beginnerPlans = {
-        monday: ["push-ups 2x8", "incline push-ups 2x10", "knee push-ups 2x8", { exercise: "wall push-ups", reps: "2x12" }],
+        monday: ["push-ups 2x8", "incline push-ups 2x10", "knee push-ups 2x8", "wall push-ups 2x12"],
         tuesday: ["superman holds 2x15seconds", "bird-dogs 2x8 each side", "dead-bugs 2x10 each side", "cat-cow stretches 2x10"],
         wednesday: ["bodyweight squats 2x15", "stactic lunges 2x8 each leg", "wall sits 2x20seconds", "caif raises 2x15"],
         thursday: ["triceps dips 2x8", "arm circles 2x20seconds", "wall handstand 2x10seconds", "shoulder shrugs 2x12"],
@@ -71,7 +71,7 @@ function getBodyWeightBeginnerPlan(day, level) {
         sunday: ["rest and recovery"]
     }
     const exercises = beginnerPlans[day.toLowerCase()];
-    let html = `<h3>${day} - Beginner Level</h3>`;
+    let html = `<h2>${day} - Beginner Level</h2>`;
 
     for (let i = 0; i < exercises.length; i++) {
         html += `<div>${exercises[i]}</div>`;
@@ -92,7 +92,7 @@ function getBodyWeightIntermediatePlan(day, level) {
         sunday: ["rest and recovery"]
     }
     const exercises = intermediatePlans[day.toLowerCase()];
-    let html = `<h3>${day} - Intermediate Level</h3>`;
+    let html = `<h2>${day} - Intermediate Level</h2>`;
 
     for (let i = 0; i < exercises.length; i++) {
         html += `<div>${exercises[i]}</div>`;
@@ -113,7 +113,7 @@ function getBodyWeightHardPlan(day, level) {
         sunday: ["rest and recovery"]
     }
     const exerses = hardPlans[day.toLowerCase()];
-    let html = `<h3>${day} - Hard Level</h3>`;
+    let html = `<h2>${day} - Hard Level</h2>`;
 
     for (let i = 0; i < exerses.length; i++) {
         html += `<div>${exerses[i]}</div>`;
@@ -134,7 +134,7 @@ function getBodyWeightAdvancedPlan(day, level) {
         sunday: ["rest and recovery"]
     }
     const exercises = advancedPlans[day.toLowerCase()];
-    let html = `<h3>${day} - Advanced Level</h3>`;
+    let html = `<h2>${day} - Advanced Level</h2>`;
 
     for (let i = 0; i < exercises.length; i++) {
         html += `<div>${exercises[i]}</div>`;
@@ -142,5 +142,7 @@ function getBodyWeightAdvancedPlan(day, level) {
     html += '';
     document.getElementById("output").innerHTML = html;
 }
+
+
 
 
