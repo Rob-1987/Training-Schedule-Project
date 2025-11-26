@@ -5,7 +5,7 @@
     align-items: center;
     flex-direction: column;
     margin: 0 auto;
-    background-color: #8bf0a3;
+    background-color: rgb(255, 254, 255);
    
     
 }
@@ -20,9 +20,8 @@
     color:rgb(6, 118, 246);
 }
 .main-header {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
     font-size: 40px;
-    font-weight: bold;
     text-align: center;
     color: rgb(13, 5, 247);
     margin-bottom: 20px;
@@ -81,7 +80,13 @@
     border: rgb(6, 118, 246) 2px solid;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     color: black;
+    position: relative;
     
+}
+.level-colour:hover {
+    background-color:#1df750;
+    transform: scale(2.05);
+    transition: all 0.3s ease;
 }
 
 
@@ -92,6 +97,12 @@
     border: rgb(110, 94, 2) 2px solid;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     color: black;
+    position: relative;
+}
+.level-colour-weight:hover {
+    background-color:#fb46ef;
+    transform: scale(2.05);
+    transition: all 0.3s ease;
 }
 
 
@@ -102,6 +113,12 @@
     border: rgb(6, 118, 246) 2px solid;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     color: black;
+    position: relative;
+}
+.weekdays-colour:hover {
+    background-color:#1df750;
+    transform: scale(1.50);
+    transition: all 0.3s ease;
 }
 
 .weekdays-colour-weight {
@@ -109,8 +126,13 @@
     border: rgb(110, 94, 2) 2px solid;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     color: black;
+    position: relative;
 }
-
+.weekdays-colour-weight:hover {
+    background-color:#fb46ef;
+    transform: scale(1.50);
+    transition: all 0.3s ease;
+}
 
 
 /* Styling for Complete week buttons - Body weight and Weight training */
@@ -165,27 +187,32 @@
 }
 
 .weight-heading {
-    color: rgb(245, 213, 33)
+    padding-top: 25px;
+    color: rgb(110, 94, 2);
 }
 
 
 
 /* Styling for the output container */
 #output {
+    text-size-adjust: auto;
+    box-shadow: black 0px 4px 8px 0px;
+    border-radius: 50rem;
     text-align: center;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
-    color: rgb(11, 11, 11);
+    color: black;
     background-color: #0ed7f1;
-    padding: 1rem;
+    padding: 10px;
 }
 
 
 /* Styling for exercise list */
-.exercise-list {
+/* .exercise-list {
     text-align: center;
     padding-left: 20px;
     margin-top: 10px;
     color: rgb(6, 118, 246);
-}
+} */
+
