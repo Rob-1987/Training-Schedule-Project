@@ -1,9 +1,68 @@
+// level buttons output to functionality.js
+let selectedLevel = 'level button';
+
+document.getElementById('beginner-button').addEventListener('click', function () {
+    selectedLevel = 'beginner';
+    document.getElementById('level-output').innerHTML = '';
+});
+
+document.getElementById('intermediate-button').addEventListener('click', function () {
+    selectedLevel = 'intermediate';
+    document.getElementById('level-output').innerHTML = '';
+});
+
+document.getElementById('hard-button').addEventListener('click', function () {
+    selectedLevel = 'hard';
+    document.getElementById('level-output').innerHTML = '';
+});
+
+document.getElementById('advanced-button').addEventListener('click', function () {
+    selectedLevel = 'advanced';
+    document.getElementById('level-output').innerHTML = '';
+});
+
+// day buttons output to functionality.js
+document.getElementById('monday-bodyweight-button').addEventListener('click', function () {
+    getBodyWeightPlan('monday', selectedLevel);
+});
+document.getElementById('tuesday-bodyweight-button').addEventListener('click', function () {
+    getBodyWeightPlan('tuesday', selectedLevel);
+});
+document.getElementById('wednesday-bodyweight-button').addEventListener('click', function () {
+    getBodyWeightPlan('wednesday', selectedLevel);
+});
+document.getElementById('thursday-bodyweight-button').addEventListener('click', function () {
+    getBodyWeightPlan('thursday', selectedLevel);
+});
+document.getElementById('friday-bodyweight-button').addEventListener('click', function () {
+    getBodyWeightPlan('friday', selectedLevel);
+});
+document.getElementById('saturday-bodyweight-button').addEventListener('click', function () {
+    getBodyWeightPlan('saturday', selectedLevel);
+});
+document.getElementById('sunday-bodyweight-button').addEventListener('click', function () {
+    getBodyWeightPlan('sunday', selectedLevel);
+});
+
+// Function to get body weight workout plan based on day and level
+function getBodyWeightPlan(day, level) {
+    if (level === 'beginner') {
+        getBodyWeightBeginnerPlan(day, level);
+    } else if (level === 'intermediate') {
+        getBodyWeightIntermediatePlan(day, level);
+    } else if (level === 'hard') {
+        getBodyWeightHardPlan(day, level);
+    } else if (level === 'advanced') {
+        getBodyWeightAdvancedPlan(day, level);
+    }
+}
+
 
 
 // Function to get body weight workout plan based on day and level
 function getBodyWeightBeginnerPlan(day, level) {
     const beginnerPlans = {
-        monday: ["push-ups 2x8", "incline push-ups 2x10", "knee push-ups 2x8", {exercise:"wall push-ups", reps: "2x12"}],
+        monday: ["push-ups 2x8", "incline push-ups 2x10", "knee push-ups 2x8", { exercise: "wall push-ups", reps: "2x12" }],
         tuesday: ["superman holds 2x15seconds", "bird-dogs 2x8 each side", "dead-bugs 2x10 each side", "cat-cow stretches 2x10"],
         wednesday: ["bodyweight squats 2x15", "stactic lunges 2x8 each leg", "wall sits 2x20seconds", "caif raises 2x15"],
         thursday: ["triceps dips 2x8", "arm circles 2x20seconds", "wall handstand 2x10seconds", "shoulder shrugs 2x12"],
@@ -30,15 +89,15 @@ function getBodyWeightIntermediatePlan(day, level) {
         thursday: ["dimond push-ups 3x10", "tricep dips 3x12", "bicep curls 3x15", "arm circles 3x30seconds", "pike shoulder taps 3x20"],
         friday: ["20-minute run", "burpees 3x10"],
         saturday: ["20minute run", "burpees 5x10"],
-        sunday: ["rest and recovery"]   
+        sunday: ["rest and recovery"]
     }
-const exercises = intermediatePlans[day.toLowerCase()];
-    let html = `<h3>${day} - Intermediate Level</h3><ul>`;
+    const exercises = intermediatePlans[day.toLowerCase()];
+    let html = `<h3>${day} - Intermediate Level</h3>`;
 
     for (let i = 0; i < exercises.length; i++) {
-        html += `<li>${exercises[i]}</li>`;
+        html += `<div>${exercises[i]}</div>`;
     }
-    html += '</ul>';
+    html += '';
     document.getElementById("output").innerHTML = html;
 }
 
@@ -54,12 +113,12 @@ function getBodyWeightHardPlan(day, level) {
         sunday: ["rest and recovery"]
     }
     const exerses = hardPlans[day.toLowerCase()];
-    let html = '<h3>${day} - Hard Level</h3><ul>';
+    let html = `<h3>${day} - Hard Level</h3>`;
 
     for (let i = 0; i < exerses.length; i++) {
-        html += `<li>${exerses[i]}</li>`;
+        html += `<div>${exerses[i]}</div>`;
     }
-    html += '</ul>';
+    html += '';
     document.getElementById("output").innerHTML = html;
 }
 
@@ -75,13 +134,13 @@ function getBodyWeightAdvancedPlan(day, level) {
         sunday: ["rest and recovery"]
     }
     const exercises = advancedPlans[day.toLowerCase()];
-    let html = `<h3>${day} - Advanced Level</h3><ul>`;
+    let html = `<h3>${day} - Advanced Level</h3>`;
 
     for (let i = 0; i < exercises.length; i++) {
-        html += `<li>${exercises[i]}</li>`;
+        html += `<div>${exercises[i]}</div>`;
     }
-    html += '</ul>';
+    html += '';
     document.getElementById("output").innerHTML = html;
 }
- 
+
 

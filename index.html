@@ -38,14 +38,15 @@
         <div>
             <h4>Select Your Training Level:</h4>
             <div class="placement-level-buttons">
-                <button class="main-button level-colour" type="button" id="beginner-bodyweight">Beginner</button>
+                <button onclick="selectedLevel = 'beginner'; document.getElementById('output').innerHTML = 'beginner';" class="main-button level-colour" type="button" id="beginner-bodyweight">Beginner</button>
 
-                <button class="main-button level-colour" type="button"
+                <button onclick="selectedLevel = 'intermediate'; document.getElementById('output').innerHTML = 'intermediate';" class="main-button level-colour" type="button"
                     id="intermediate-bodyweight">Intermediate</button>
 
-                <button class="main-button level-colour" type="button" id="hard-bodyweight">Hard</button>
+                <button onclick="selectedLevel = 'hard'; document.getElementById('output').innerHTML = 'hard';" class="main-button level-colour" type="button" id="hard-bodyweight">Hard</button>
 
-                <button class="main-button level-colour" type="button" id="advanced-bodyweight">Advanced</button>
+                <button onclick="selectedLevel = 'advanced'; document.getElementById('output').innerHTML = 'advanced';" class="main-button level-colour" type="button" id="advanced-bodyweight">Advanced</button>
+                <div id="level-output"></div>
             </div>
         </div>
 
@@ -63,14 +64,14 @@
 
         <!--Body Weight Buttons for each day of the week -->
         <div>
-            <button onclick="getBodyWeightBeginnerPlan('Monday', 'beginner')" class="main-button weekdays-colour" type="button" id="monday-bodyweight-button">Monday</button>
-            <button onclick="getBodyWeightBeginnerPlan('Tuesday', 'beginner')" class="main-button weekdays-colour" type="button" id="tuesday-bodyweight-button">Tuesday</button>
-            <button onclick="getBodyWeightBeginnerPlan('Wednesday', 'beginner')" class="main-button weekdays-colour" type="button"
+            <button onclick="getBodyWeightPlan('Monday', selectedLevel)" class="main-button weekdays-colour" type="button" id="monday-bodyweight-button">Monday</button>
+            <button onclick="getBodyWeightPlan('Tuesday', selectedLevel)" class="main-button weekdays-colour" type="button" id="tuesday-bodyweight-button">Tuesday</button>
+            <button onclick="getBodyWeightPlan('Wednesday', selectedLevel)" class="main-button weekdays-colour" type="button"
                 id="wednesday-bodyweight-button">Wednesday</button>
-            <button onclick="getBodyWeightBeginnerPlan('Thursday', 'beginner')" class="main-button weekdays-colour" type="button" id="thursday-bodyweight-button">Thursday</button>
-            <button onclick="getBodyWeightBeginnerPlan('Friday', 'beginner')" class="main-button weekdays-colour" type="button" id="friday-bodyweight-button">Friday</button>
-            <button onclick="getBodyWeightBeginnerPlan('Saturday', 'beginner')" class="main-button weekdays-colour" type="button" id="saturday-bodyweight-button">Saturday</button>
-            <button onclick="getBodyWeightBeginnerPlan('Sunday', 'beginner')" class="main-button weekdays-colour" type="button" id="sunday-bodyweight-button">Sunday
+            <button onclick="getBodyWeightPlan('Thursday', selectedLevel)" class="main-button weekdays-colour" type="button" id="thursday-bodyweight-button">Thursday</button>
+            <button onclick="getBodyWeightPlan('Friday', selectedLevel)" class="main-button weekdays-colour" type="button" id="friday-bodyweight-button">Friday</button>
+            <button onclick="getBodyWeightPlan('Saturday', selectedLevel)" class="main-button weekdays-colour" type="button" id="saturday-bodyweight-button">Saturday</button>
+            <button onclick="getBodyWeightPlan('Sunday', selectedLevel)" class="main-button weekdays-colour" type="button" id="sunday-bodyweight-button">Sunday
                 (rest)</button>
                 <div id="output"></div>
         </div>
@@ -86,6 +87,7 @@
                 <button class="main-button level-colour-weight" type="button" id="intermediate">Intermediate</button>
                 <button class="main-button level-colour-weight" type="button" id="hard">Hard</button>
                 <button class="main-button level-colour-weight" type="button" id="advanced">Advanced</button>
+                
             </div>
         </div>
 
