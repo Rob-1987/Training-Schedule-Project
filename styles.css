@@ -193,7 +193,7 @@
 
 
 
-/* Styling for the output container */
+/* Styling for the output containers */
 #output {
     text-size-adjust: auto;
     box-shadow: black 0px 4px 8px 0px;
@@ -208,11 +208,17 @@
 }
 
 
-/* Styling for exercise list */
-/* .exercise-list {
+#weight-output {
+    text-size-adjust: auto;
+    box-shadow: black 0px 4px 8px 0px;
+    border-radius: 50rem;
     text-align: center;
-    padding-left: 20px;
-    margin-top: 10px;
-    color: rgb(6, 118, 246);
-} */
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    background-color: #fae741;
+    padding: 10px;
+}
+
 
