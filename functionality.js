@@ -1,46 +1,59 @@
 // level buttons output to functionality.js
 let selectedLevel = 'level button';
+let completedBodyweightDays = [];
+let completedWeightDays = [];
+let selectedDay;
 
-document.getElementById('beginner-button').addEventListener('click', function () {
+
+
+
+document.getElementById('beginner-bodyweight').addEventListener('click', function () {
     selectedLevel = 'beginner';
     document.getElementById('level-output').innerHTML = '';
 });
 
-document.getElementById('intermediate-button').addEventListener('click', function () {
+document.getElementById('intermediate-bodyweight').addEventListener('click', function () {
     selectedLevel = 'intermediate';
     document.getElementById('level-output').innerHTML = '';
 });
 
-document.getElementById('hard-button').addEventListener('click', function () {
+document.getElementById('hard-bodyweight').addEventListener('click', function () {
     selectedLevel = 'hard';
     document.getElementById('level-output').innerHTML = '';
 });
 
-document.getElementById('advanced-button').addEventListener('click', function () {
+document.getElementById('advanced-bodyweight').addEventListener('click', function () {
     selectedLevel = 'advanced';
     document.getElementById('level-output').innerHTML = '';
 });
 
 // day buttons output to functionality.js
 document.getElementById('monday-bodyweight-button').addEventListener('click', function () {
+    selectedDay = 'monday';
     getBodyWeightPlan('monday', selectedLevel);
 });
 document.getElementById('tuesday-bodyweight-button').addEventListener('click', function () {
+    selectedDay = 'tuesday';
     getBodyWeightPlan('tuesday', selectedLevel);
 });
 document.getElementById('wednesday-bodyweight-button').addEventListener('click', function () {
+    selectedDay = 'wednesday';
     getBodyWeightPlan('wednesday', selectedLevel);
 });
 document.getElementById('thursday-bodyweight-button').addEventListener('click', function () {
+    selectedDay = 'thursday';
     getBodyWeightPlan('thursday', selectedLevel);
 });
 document.getElementById('friday-bodyweight-button').addEventListener('click', function () {
+    selectedDay = 'friday';
     getBodyWeightPlan('friday', selectedLevel);
 });
 document.getElementById('saturday-bodyweight-button').addEventListener('click', function () {
+    selectedDay = 'saturday';
     getBodyWeightPlan('saturday', selectedLevel);
 });
 document.getElementById('sunday-bodyweight-button').addEventListener('click', function () {
+    selectedDay = 'sunday';
     getBodyWeightPlan('sunday', selectedLevel);
 });
 
@@ -76,7 +89,7 @@ function getBodyWeightBeginnerPlan(day, level) {
     for (let i = 0; i < exercises.length; i++) {
         html += `<div>${exercises[i]}</div>`;
     }
-    html += '';
+    html += '<br><button onclick="completeBodyweightWorkout(\'' + day + '\')" class="main-button complete-day-colour" type="button" id="complete-bodyweight-day">Complete Day</button>';
     document.getElementById("output").innerHTML = html;
 }
 
@@ -97,7 +110,7 @@ function getBodyWeightIntermediatePlan(day, level) {
     for (let i = 0; i < exercises.length; i++) {
         html += `<div>${exercises[i]}</div>`;
     }
-    html += '';
+    html += '<br><button onclick="completeBodyweightWorkout(\'' + day + '\')" class="main-button complete-day-colour" type="button" id="complete-bodyweight-day">Complete Day</button>';
     document.getElementById("output").innerHTML = html;
 }
 
@@ -118,7 +131,7 @@ function getBodyWeightHardPlan(day, level) {
     for (let i = 0; i < exerses.length; i++) {
         html += `<div>${exerses[i]}</div>`;
     }
-    html += '';
+    html += '<br><button onclick="completeBodyweightWorkout(\'' + day + '\')" class="main-button complete-day-colour" type="button" id="complete-bodyweight-day">Complete Day</button>';
     document.getElementById("output").innerHTML = html;
 }
 
@@ -139,7 +152,7 @@ function getBodyWeightAdvancedPlan(day, level) {
     for (let i = 0; i < exercises.length; i++) {
         html += `<div>${exercises[i]}</div>`;
     }
-    html += '';
+    html += '<br><button onclick="completeBodyweightWorkout(\'' + day + '\')" class="main-button complete-day-colour" type="button" id="complete-bodyweight-day">Complete Day</button>';
     document.getElementById("output").innerHTML = html;
 }
 
@@ -224,6 +237,9 @@ function getWeightBeginnerPlan(day, level) {
     for (let i = 0; i < exercises.length; i++) {
         html += `<div>${exercises[i]}</div>`;
     }
+
+    html += '<br><button onclick="completeWeightWorkout(\'' + day + '\')" class="main-button complete-day-colour" type="button" id="complete-weight-day">Complete Day</button>';
+
     document.getElementById("weight-output").innerHTML = html;
 }
 
@@ -242,6 +258,8 @@ function getWeightIntermediatePlan(day, level) {
     for (let i = 0; i < exercises.length; i++) {
         html += `<div>${exercises[i]}</div>`;
     }
+    html += '<br><button onclick="completeWeightWorkout(\'' + day + '\')" class="main-button complete-day-colour" type="button" id="complete-weight-day">Complete Day</button>';
+
     document.getElementById("weight-output").innerHTML = html;
 }
 
@@ -260,6 +278,8 @@ function getWeightHardPlan(day, level) {
     for (let i = 0; i < exercises.length; i++) {
         html += `<div>${exercises[i]}</div>`;
     }
+    html += '<br><button onclick="completeWeightWorkout(\'' + day + '\')" class="main-button complete-day-colour" type="button" id="complete-weight-day">Complete Day</button>';
+
     document.getElementById("weight-output").innerHTML = html;
 }
 
@@ -278,6 +298,157 @@ function getWeightAdvancedPlan(day, level) {
     for (let i = 0; i < exercises.length; i++) {
         html += `<div>${exercises[i]}</div>`;
     }
+    html += '<br><button onclick="completeWeightWorkout(\'' + day + '\')" class="main-button complete-day-colour" type="button" id="complete-weight-day">Complete Day</button>';
+
     document.getElementById("weight-output").innerHTML = html;
 }
 // End of weight training advanced plan function
+
+
+// Functions to complete days and weeks and reset schedules to be added here
+
+function completeBodyweightWorkout(day) {
+    const dayLower = day.toLowerCase();
+    if (!completedBodyweightDays.includes(dayLower)) {
+        completedBodyweightDays.push(dayLower);
+
+        const button = document.getElementById(dayLower + '-bodyweight-button');
+        if (button) {
+            button.innerHTML = day + '✓';
+            button.style.backgroundColor = ' #1df750'; // Change button color to green
+        }
+        document.getElementById('output').innerHTML = `<h3>Great job! You have completed your ${day} bodyweight workout.</h3>`;
+
+        checkBodyweightWeekCompletion();
+    }
+}
+
+function completeWeightWorkout(day) {
+    const dayLower = day.toLowerCase();
+
+    if (!completedWeightDays.includes(dayLower)) {
+        completedWeightDays.push(dayLower);
+
+        const button = document.getElementById(dayLower + '-weight-button');
+        if (button) {
+            button.innerHTML = day + '✓';
+            button.style.backgroundColor = ' #1df750'; // Change button color to green
+        }
+        document.getElementById('weight-output').innerHTML = `<h3>Great job! You have completed your ${day} weight workout.</h3>`;
+
+        checkWeightWeekCompletion();
+    }
+}
+
+// Function to check if all days in the bodyweight week are completed
+
+function checkBodyweightWeekCompletion() {
+    if (completedBodyweightDays.length === 7) {
+        const completeButton = document.getElementById('complete-bodyweight');
+        if (completeButton) {
+            completeButton.classList.add('flash-button');
+        }
+    }
+}
+
+function checkWeightWeekCompletion() {
+    if (completedWeightDays.length === 7) {
+        const completeButton = document.getElementById('complete-weight');
+        if (completeButton) {
+            completeButton.classList.add('flash-button');
+        }
+    }
+}
+// Event listener for completing bodyweight week
+
+document.getElementById('complete-bodyweight').addEventListener('click', function () {
+    if (completedBodyweightDays.length === 7) {
+        this.classList.remove('flash-button');
+
+        document.getElementById('output').innerHTML = `<h2>🎉 CONGRATULATIONS! 🎉 You have completed the Bodyweight Training Week!</h2>`;
+
+        const weekProgress = document.querySelector('.blue-card p');
+        if (weekProgress) {
+            weekProgress.innerHTML = `7/7 Days completed`;
+            weekProgress.style.color = '#1df750';
+            weekProgress.style.fontWeight = 'bold';
+        }
+    } else {
+        document.getElementById('output').innerHTML = `<h3 style="color: red;">you've only completed ${completedBodyweightDays.length} out of 7 days.</h3>
+        <p>keep going! you're doing great!</p>`;
+    }
+});
+
+// Event listener for completing weight week
+document.getElementById('complete-weight').addEventListener('click', function () {
+    if (completedWeightDays.length === 7) {
+        this.classList.remove('flash-button');
+
+        document.getElementById('weight-output').innerHTML = `<h2>🎉 CONGRATULATIONS! 🎉 You have completed the Weight Training Week!</h2>
+    `;
+        const weekProgress = document.querySelector('.yellow-card p');
+        if (weekProgress) {
+            weekProgress.innerHTML = `7/7 Days completed`;
+            weekProgress.style.color = '#1df750';
+            weekProgress.style.fontWeight = 'bold';
+        } else {
+            document.getElementById('weight-output').innerHTML = `<h3 style="color: red;">you've only completed ${completedWeightDays.length} out of 7 days.</h3>
+        <p>keep going! you're doing great!</p>`;
+        }
+    };
+});
+
+// Function to reset both schedules
+document.getElementById('reset-bodyweight').addEventListener('click', function () {
+    const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
+    completedBodyweightDays = [];
+
+    weekdays.forEach(day => {
+        const button = document.getElementById(day + '-bodyweight-button');
+        if (button) {
+            button.innerHTML = day.charAt(0).toUpperCase() + day.slice(1);
+            button.style.backgroundColor = ''; // Reset button color
+        }
+    });
+    document.getElementById('output').innerHTML = ''; // Clear output message
+});
+
+const completeButton = document.getElementById('complete-bodyweight');
+if (completeButton) {
+    completeButton.classList.remove('flash-button');
+}
+const weekProgress = document.querySelector('.blue-card p');
+if (weekProgress) {
+    weekProgress.innerHTML = `0/7 Days completed`;
+    weekProgress.style.color = '';
+    weekProgress.style.fontWeight = '';
+}
+document.getElementById('output').addEventListener('click', function () {
+});
+
+document.getElementById('reset').addEventListener('click', function () {
+    const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+    completedWeightDays = [];
+
+    weekdays.forEach(day => {
+        const button = document.getElementById(day + '-weight-button');
+        if (button) {
+            button.innerHTML = day.charAt(0).toUpperCase() + day.slice(1);
+            button.style.backgroundColor = ''; // Reset button color
+        }
+    });
+    document.getElementById('weight-output').innerHTML = ''; // Clear output message
+});
+const completeWeightButton = document.getElementById('complete-weight');
+if (completeWeightButton) {
+    completeWeightButton.classList.remove('flash-button');
+}
+const weightWeekProgress = document.querySelector('.yellow-card p');
+if (weightWeekProgress) {
+    weightWeekProgress.innerHTML = `0/7 Days completed`;
+    weightWeekProgress.style.color = '';
+    weightWeekProgress.style.fontWeight = '';
+}
+document.getElementById('weight-output').addEventListener('click', function () {
+});
