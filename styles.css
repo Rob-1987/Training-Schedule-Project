@@ -139,13 +139,32 @@
 .complete-week-colour {
     background-color: #1df750;
     border: none;
-    color: white;
+    color: black;
+    
 }
+
+@keyframes flash {
+    0%, 100% {
+        background-color: #1df750;
+        transform: scale(1);
+    }
+    50% {
+        background-color: #FFD700;
+        transform: scale(1.1);
+        animation: flash 2s infinite;
+        box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+    }
+}
+
+.flash-button {
+    animation: flash 2s infinite;
+}
+
 
 .complete-week-weight-colour {
     background-color: #1df750;
     border: none;
-    color: white;
+    color: black;
 }
 
 
@@ -219,6 +238,15 @@
     color: black;
     background-color: #fae741;
     padding: 10px;
+}
+
+/* Styling for the buttons container */
+.complete-day-colour {
+    
+    box-shadow: black 0px 4px 8px 0px;
+    background-color: #1df750;
+    border: none;
+    color: black;
 }
 
 
