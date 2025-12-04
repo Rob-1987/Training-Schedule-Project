@@ -72,6 +72,9 @@ function getBodyWeightPlan(day, level) {
 
 
 
+
+
+
 // Function to get body weight workout plan based on day and level
 function getBodyWeightBeginnerPlan(day, level) {
     const beginnerPlans = {
@@ -159,6 +162,10 @@ function getBodyWeightAdvancedPlan(day, level) {
 
 // End of body weight workout plans functions
 
+
+
+
+
 // Weight training workout plans functions to be added here
 
 let selectedWeight = 'weight button';
@@ -219,6 +226,9 @@ function getWeightPlan(day, level) {
 }
 
 // End of weight training workout plans functions
+
+
+
 
 // weight training beginner plan function
 function getWeightBeginnerPlan(day, level) {
@@ -305,23 +315,32 @@ function getWeightAdvancedPlan(day, level) {
 // End of weight training advanced plan function
 
 
+
+
+
+
 // Functions to complete days and weeks and reset schedules to be added here
+let completedBodyweightDaysCount = 0;
 
 function completeBodyweightWorkout(day) {
     const dayLower = day.toLowerCase();
     if (!completedBodyweightDays.includes(dayLower)) {
         completedBodyweightDays.push(dayLower);
-
         const button = document.getElementById(dayLower + '-bodyweight-button');
         if (button) {
             button.innerHTML = day + '✓';
             button.style.backgroundColor = ' #1df750'; // Change button color to green
         }
         document.getElementById('output').innerHTML = `<h3>Great job! You have completed your ${day} bodyweight workout.</h3>`;
-
         checkBodyweightWeekCompletion();
+
+
+        completedBodyweightDaysCount++;
+        document.getElementById('bodyweightCountDays').innerHTML = completedBodyweightDaysCount;
     }
 }
+
+let completedWeightDaysCount = 0;
 
 function completeWeightWorkout(day) {
     const dayLower = day.toLowerCase();
@@ -337,8 +356,16 @@ function completeWeightWorkout(day) {
         document.getElementById('weight-output').innerHTML = `<h3>Great job! You have completed your ${day} weight workout.</h3>`;
 
         checkWeightWeekCompletion();
+
+
+        completedWeightDaysCount++;
+        document.getElementById('weightCountDays').innerHTML = completedWeightDaysCount;
     }
 }
+
+
+
+
 
 // Function to check if all days in the bodyweight week are completed
 
@@ -359,6 +386,11 @@ function checkWeightWeekCompletion() {
         }
     }
 }
+
+
+
+
+
 // Event listener for completing bodyweight week
 
 document.getElementById('complete-bodyweight').addEventListener('click', function () {
@@ -370,7 +402,7 @@ document.getElementById('complete-bodyweight').addEventListener('click', functio
         const weekProgress = document.querySelector('.blue-card p');
         if (weekProgress) {
             weekProgress.innerHTML = `7/7 Days completed`;
-            weekProgress.style.color = '#1df750';
+            weekProgress.style.color = '#1df750'; // Green color of completion text
             weekProgress.style.fontWeight = 'bold';
         }
     } else {
@@ -389,7 +421,7 @@ document.getElementById('complete-weight').addEventListener('click', function ()
         const weekProgress = document.querySelector('.yellow-card p');
         if (weekProgress) {
             weekProgress.innerHTML = `7/7 Days completed`;
-            weekProgress.style.color = '#1df750';
+            weekProgress.style.color = '#1df750'; // Green color of completion text
             weekProgress.style.fontWeight = 'bold';
         } else {
             document.getElementById('weight-output').innerHTML = `<h3 style="color: red;">you've only completed ${completedWeightDays.length} out of 7 days.</h3>
@@ -397,6 +429,12 @@ document.getElementById('complete-weight').addEventListener('click', function ()
         }
     };
 });
+
+
+
+
+
+
 
 // Function to reset both schedules
 document.getElementById('reset-bodyweight').addEventListener('click', function () {
@@ -412,6 +450,8 @@ document.getElementById('reset-bodyweight').addEventListener('click', function (
         }
     });
     document.getElementById('output').innerHTML = ''; // Clear output message
+    completedBodyweightDaysCount = 0;
+    document.getElementById('bodyweightCountDays').innerHTML = completedBodyweightDaysCount;
 });
 
 const completeButton = document.getElementById('complete-bodyweight');
@@ -427,6 +467,9 @@ if (weekProgress) {
 document.getElementById('output').addEventListener('click', function () {
 });
 
+
+
+// Function to reset weight training schedule
 document.getElementById('reset').addEventListener('click', function () {
     const weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
     completedWeightDays = [];
@@ -439,6 +482,9 @@ document.getElementById('reset').addEventListener('click', function () {
         }
     });
     document.getElementById('weight-output').innerHTML = ''; // Clear output message
+
+    completedWeightDaysCount = 0;
+    document.getElementById('weightCountDays').innerHTML = completedWeightDaysCount;
 });
 const completeWeightButton = document.getElementById('complete-weight');
 if (completeWeightButton) {
