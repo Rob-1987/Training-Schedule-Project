@@ -4,28 +4,46 @@ let completedBodyweightDays = [];
 let completedWeightDays = [];
 let selectedDay;
 
+document.addEventListener('DOMContentLoaded', function() {
+    const storedName = localStorage.getItem('userName');
+    if (storedName) {
+        document.getElementById('name').value = storedName;
+    }
+});
 
+
+// name input field
+const nameInput = document.getElementById('name');
+nameInput.addEventListener('input', function () {
+    // console.log('Name input changed to:', nameInput.value);
+localStorage.setItem('userName', nameInput.value);
+});
 
 
 document.getElementById('beginner-bodyweight').addEventListener('click', function () {
     selectedLevel = 'beginner';
     document.getElementById('level-output').innerHTML = '';
+    document.getElementById('output').innerHTML = 'beginner';
+    alert('beginner level selected');
 });
 
 document.getElementById('intermediate-bodyweight').addEventListener('click', function () {
     selectedLevel = 'intermediate';
     document.getElementById('level-output').innerHTML = '';
+    document.getElementById('output').innerHTML = 'intermediate';
 });
 
 document.getElementById('hard-bodyweight').addEventListener('click', function () {
     selectedLevel = 'hard';
     document.getElementById('level-output').innerHTML = '';
+    document.getElementById('output').innerHTML = 'hard';
 });
 
 document.getElementById('advanced-bodyweight').addEventListener('click', function () {
     selectedLevel = 'advanced';
     document.getElementById('level-output').innerHTML = '';
-});
+    document.getElementById('output').innerHTML = 'advanced';
+    });
 
 // day buttons output to functionality.js
 document.getElementById('monday-bodyweight-button').addEventListener('click', function () {
@@ -69,10 +87,6 @@ function getBodyWeightPlan(day, level) {
         getBodyWeightAdvancedPlan(day, level);
     }
 }
-
-
-
-
 
 
 // Function to get body weight workout plan based on day and level
@@ -173,18 +187,22 @@ let selectedWeight = 'weight button';
 document.getElementById('beginner-weight-button').addEventListener('click', function () {
     selectedWeight = 'beginner';
     document.getElementById('weight-output').innerHTML = '';
+     document.getElementById('weight-output').innerHTML = 'beginner';
 });
 document.getElementById('intermediate-weight-button').addEventListener('click', function () {
     selectedWeight = 'intermediate';
     document.getElementById('weight-output').innerHTML = '';
+     document.getElementById('weight-output').innerHTML = 'intermediate';
 });
 document.getElementById('hard-weight-button').addEventListener('click', function () {
     selectedWeight = 'hard';
     document.getElementById('weight-output').innerHTML = '';
+    document.getElementById('weight-output').innerHTML = 'hard';
 });
 document.getElementById('advanced-weight-button').addEventListener('click', function () {
     selectedWeight = 'advanced';
     document.getElementById('weight-output').innerHTML = '';
+    document.getElementById('weight-output').innerHTML = 'advanced';
 });
 // End of weight training workout plans functions
 
@@ -245,6 +263,7 @@ function getWeightBeginnerPlan(day, level) {
     let html = `<h2>${day} - Beginner Weight Training Level</h2>`;
 
     for (let i = 0; i < exercises.length; i++) {
+    
         html += `<div>${exercises[i]}</div>`;
     }
 
@@ -265,9 +284,10 @@ function getWeightIntermediatePlan(day, level) {
     }
     const exercises = intermediateWeightPlans[day.toLowerCase()];
     let html = `<h2>${day} - Intermediate Weight Training Level</h2>`;
-    for (let i = 0; i < exercises.length; i++) {
-        html += `<div>${exercises[i]}</div>`;
-    }
+    // for (let i = 0; i < exercises.length; i++) {
+    //     const adjustedExercise = increaseReps(exercises[i], 1); // Assuming week number is 1 for intermediate
+    //     html += `<div>${adjustedExercise}</div>`;
+    // }
     html += '<br><button onclick="completeWeightWorkout(\'' + day + '\')" class="main-button complete-day-colour" type="button" id="complete-weight-day">Complete Day</button>';
 
     document.getElementById("weight-output").innerHTML = html;
@@ -285,9 +305,10 @@ function getWeightHardPlan(day, level) {
     }
     const exercises = hardWeightPlans[day.toLowerCase()];
     let html = `<h2>${day} - Hard Weight Training Level</h2>`;
-    for (let i = 0; i < exercises.length; i++) {
-        html += `<div>${exercises[i]}</div>`;
-    }
+    // for (let i = 0; i < exercises.length; i++) {
+    //     const adjustedExercise = increaseReps(exercises[i], 1); // Assuming week number is 1 for hard
+    //     html += `<div>${adjustedExercise}</div>`;
+    // }
     html += '<br><button onclick="completeWeightWorkout(\'' + day + '\')" class="main-button complete-day-colour" type="button" id="complete-weight-day">Complete Day</button>';
 
     document.getElementById("weight-output").innerHTML = html;
@@ -305,9 +326,10 @@ function getWeightAdvancedPlan(day, level) {
     }
     const exercises = advancedWeightPlans[day.toLowerCase()];
     let html = `<h2>${day} - Advanced Weight Training Level</h2>`;
-    for (let i = 0; i < exercises.length; i++) {
-        html += `<div>${exercises[i]}</div>`;
-    }
+    // for (let i = 0; i < exercises.length; i++) {
+    //     const adjustedExercise = increaseReps(exercises[i], 1); // Assuming week number is 1 for advanced
+    //     html += `<div>${exercises[i]}</div>`;
+    // }
     html += '<br><button onclick="completeWeightWorkout(\'' + day + '\')" class="main-button complete-day-colour" type="button" id="complete-weight-day">Complete Day</button>';
 
     document.getElementById("weight-output").innerHTML = html;
@@ -331,7 +353,8 @@ function completeBodyweightWorkout(day) {
             button.innerHTML = day + '✓';
             button.style.backgroundColor = ' #1df750'; // Change button color to green
         }
-        document.getElementById('output').innerHTML = `<h3>Great job! You have completed your ${day} bodyweight workout.</h3>`;
+        const userName = localStorage.getItem('userName') || 'User';
+        document.getElementById('output').innerHTML = `<h3>Great job, ${userName}! You have completed your ${day} bodyweight workout.</h3>`;
         checkBodyweightWeekCompletion();
 
 
@@ -396,8 +419,8 @@ function checkWeightWeekCompletion() {
 document.getElementById('complete-bodyweight').addEventListener('click', function () {
     if (completedBodyweightDays.length === 7) {
         this.classList.remove('flash-button');
-
-        document.getElementById('output').innerHTML = `<h2>🎉 CONGRATULATIONS! 🎉 You have completed the Bodyweight Training Week!</h2>`;
+const userName = localStorage.getItem('userName') || 'User';
+        document.getElementById('output').innerHTML = `<h2>🎉 CONGRATULATIONS! ${userName} 🎉 You have completed the Bodyweight Training Week!</h2>`;
 
         const weekProgress = document.querySelector('.blue-card p');
         if (weekProgress) {
